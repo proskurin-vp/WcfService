@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceFolderMonitor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerLibrary", "LoggerLibrary\LoggerLibrary.csproj", "{E780B825-5CD6-43AA-8A12-B15647F7EE41}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{5F0F5B8F-8E77-4F96-B903-67155B12215A}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\vlad\Desktop\CheckExampleAndSqlScripts.txt = C:\Users\vlad\Desktop\CheckExampleAndSqlScripts.txt
+		C:\Users\vlad\Desktop\Задача.docx = C:\Users\vlad\Desktop\Задача.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

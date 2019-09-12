@@ -25,8 +25,14 @@ namespace WcfServiceLibraryCheck
             queryParameters.Add("@parPackSize", packSize);
             using (IDbConnection connection = new SqlConnection(_connectionString))
             {
-                return connection.Query<Check>("spGetLastPack", queryParameters,
-                commandType: CommandType.StoredProcedure).ToList();
+                connection.Open();
+
+                List<Check> checks = null;
+                string sql = "spGetLastPack";
+                checks = connection.Query<Check>(sql,
+                    new {parPackSize = packSize},
+                    commandType: CommandType.StoredProcedure).ToList();
+                return checks;
             }
         }
 

@@ -1,0 +1,28 @@
+﻿Check example: {"Id":1,"CheckNumber":"№123456","Summ":100500.0,"Discount":105.5,"Articles":"data1;data2;data3"}
+
+Sql sqripts:
+
+CREATE TABLE [dbo].[Checks](
+	[Id] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[CheckNumber] [nvarchar](max) NULL,
+	[Summ] [money] NULL,
+	[Discount] [money] NULL,
+	[Articles] [nvarchar](max) NULL)
+
+
+CREATE PROCEDURE [dbo].[spGetLastPack] @parPackSize int
+AS
+BEGIN
+	SELECT top(@parPackSize) * FROM Checks
+END
+
+
+CREATE PROCEDURE [dbo].[spSaveCheck]
+	@parCheckNumber nvarchar(max),
+	@parSumm money,
+	@parDiscount money,
+	@parArticles nvarchar(max)
+AS
+	INSERT INTO Checks (CheckNumber, Summ, Discount, Articles)
+	VALUES (@parCheckNumber, @parSumm, @parDiscount, @parArticles)
+RETURN 0
