@@ -1,4 +1,4 @@
-# WcfService
+# Communication Wcf and Windows service
 
 Implemented WCF and Windows services. WCF service stores data in one of two repositories (this is specified in the configuration file). 
 The first stores the data in the database, the second is just in the folder (the path to the folder is configured in the configuration file). 
